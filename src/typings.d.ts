@@ -19,4 +19,5 @@ interface ISubscriber {
     seven: boolean,
     eight: boolean,
   }
+  contribution_details: number,
 }

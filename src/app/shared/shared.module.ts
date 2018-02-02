@@ -13,7 +13,7 @@ import {
   MatTabsModule,
   MatCardModule,
   MatStepperModule,
-  MatIconModule,
+  MatProgressSpinnerModule,
 } from '@angular/material';
 import { CounterComponent } from './counter/counter.component';
 
@@ -32,7 +32,7 @@ import { CounterComponent } from './counter/counter.component';
     MatTabsModule,
     MatCardModule,
     MatStepperModule,
-    MatIconModule,
+    MatProgressSpinnerModule,
   ],
   declarations: [
   CounterComponent],
@@ -50,7 +50,7 @@ import { CounterComponent } from './counter/counter.component';
     MatTabsModule,
     MatCardModule,
     MatStepperModule,
-    MatIconModule,
+    MatProgressSpinnerModule,
     // Components
     CounterComponent,
   ]

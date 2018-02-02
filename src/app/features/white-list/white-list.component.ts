@@ -1,20 +1,27 @@
-import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormArray, FormBuilder, Validators } from '@angular/forms';
+import { Component, OnInit, ViewChild, ElementRef} from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
+import { MatVerticalStepper } from '@angular/material';
 import { AngularFireDatabase } from 'angularfire2/database';
 
 @Component({
   selector: 'ls-white-list',
   templateUrl: './white-list.component.html',
-  styleUrls: ['./white-list.component.scss']
+  styleUrls: ['./white-list.component.scss'],
 })
 export class WhiteListComponent implements OnInit {
   form: FormGroup;
-  subscriberRef;
+  subscribed;
+  showSpinner = false;
 
   get clauses() {
-    return this.form.controls.subscriber['controls'].clauses.controls;
+    return this.form.controls.clauses['controls'];
   }
+
+  @ViewChild(MatVerticalStepper)
+  stepper: MatVerticalStepper;
+  @ViewChild('contributionInput')
+  contributionInput: ElementRef;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -24,35 +31,50 @@ export class WhiteListComponent implements OnInit {
   ngOnInit() {
     this.form = this.formBuilder.group({
       subscriber: this.formBuilder.group({
-        firstName: [ '', [ Validators.required ]],
-        lastName: [ '', [ Validators.required ]],
+        first_name: [ '', [ Validators.required ]],
+        last_name: [ '', [ Validators.required ]],
         email: [ '', [ Validators.required, Validators.email ]],
         ethereum: [ '', [ Validators.required, Validators.minLength(40), Validators.maxLength(42), ]],
-        clauses: this.formBuilder.group({
-          one: [ '', [ Validators.requiredTrue ]],
-          two: [ '', [ Validators.requiredTrue ]],
-          three: [ '', [ Validators.requiredTrue ]],
-          four: [ '', [ Validators.requiredTrue ]],
-          five: [ '', [ Validators.requiredTrue ]],
-          six: [ '', [ Validators.requiredTrue ]],
-          seven: [ '', [ Validators.requiredTrue ]],
-          eight: [ '', [ Validators.requiredTrue ]],
-        }),
       }),
-      confirmation_identity: [ '', [ Validators.required ]],
+      clauses: this.formBuilder.group({
+        one: [ '', [ Validators.requiredTrue ]],
+        two: [ '', [ Validators.requiredTrue ]],
+        three: [ '', [ Validators.requiredTrue ]],
+        four: [ '', [ Validators.requiredTrue ]],
+        five: [ '', [ Validators.requiredTrue ]],
+        six: [ '', [ Validators.requiredTrue ]],
+        seven: [ '', [ Validators.requiredTrue ]],
+        eight: [ '', [ Validators.requiredTrue ]],
+      }),
       contribution_details: [ '', [ Validators.required ]],
     });
-  }
 
-  allClausesChecked() {
-    let allClausesChecked = true;
-    const clauses = Object.keys(this.clauses);
+    this.form.get('subscriber')
+                .valueChanges
+                .subscribe(changes => {
+                  if (this.form.get('subscriber').valid) {
+                    this.showSpinner = true;
+                    setTimeout(() => {
+                      this.stepper.next();
+                      this.showSpinner = false;
+                    }, 500);
+                  }
+                });
 
-    clauses.forEach(clause => {
-      if (!this.clauses[clause].value) { allClausesChecked = false; }
-    });
-
-    return allClausesChecked;
+    this.form.get('clauses')
+                .valueChanges
+                .subscribe(changes => {
+                  if (this.form.get('clauses').valid) {
+                    this.showSpinner = true;
+                    setTimeout(() => {
+                      this.stepper.next();
+                      this.showSpinner = false;
+                      setTimeout(() => {
+                        this.contributionInput.nativeElement.focus();
+                      }, 100);
+                    }, 500);
+                  }
+                });
   }
 
   checkAllClauses() {
@@ -63,11 +85,20 @@ export class WhiteListComponent implements OnInit {
   }
 
   saveSubscriber(subscription) {
+    this.showSpinner = true;
+
+    const subscriptionToSend = {
+      ...subscription.subscriber,
+      clauses: subscription.clauses,
+      contribution_details: subscription.contribution_details
+    };
+
     this.fireDatabase
           .list('subscribers')
-          .push(subscription.subscriber)
+          .push(subscriptionToSend)
           .then(subscriberRef => {
-            this.subscriberRef = subscriberRef;
+            this.subscribed = true;
+            this.showSpinner = false;
           });
   }
 }
