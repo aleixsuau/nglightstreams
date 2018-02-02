@@ -1,0 +1,36 @@
+:host ::ng-deep .mat-tab-label {
+  font-size: 20px;
+  line-height: 1.3em;
+  font-weight: 700;
+  color: #273f5b !important;
+  // font-family: "Nunito", Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-family: "FontAwesome";
+  letter-spacing: 0.02em;
+}
+
+:host ::ng-deep {
+  text-align: left;
+}
+
+.mat-form-field {
+  width: 100%;
+}
+
+.mat-card {
+  margin: 20px;
+  border-radius: 20px !important;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+:host ::ng-deep {
+  .mat-step-text-label, .mat-input-element, .mat-form-field-label, .mat-checkbox-label {
+    font-family: Nunito;
+    color: #7189a9;
+  }
+
+  .mat-step-text-label {
+    font-size: 20px;
+    font-weight: 400;
+  }
+}

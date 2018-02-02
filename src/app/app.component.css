@@ -1,0 +1,11 @@
+.sky-background {
+  background-color: #2483db;
+  background-image: url('../assets/utouch-theme/img/clouds5.png');
+  margin-bottom: 100px;
+  padding-bottom: 80px;
+}
+
+
+.join {
+    margin-bottom: 60px;
+}

@@ -1,0 +1,38 @@
+.days {
+  display: inline-block;
+}
+
+.counter-container {
+  margin-bottom: 45px;
+}
+
+.slides-item {
+  opacity: 1 !important;
+  display: inline-block;
+  position: relative;
+  margin-right: 70px;
+  width: 80px;
+  height: 80px;
+  line-height: 80px;
+  color: #fff;
+  text-align: center;
+  font-size: 50px;
+  font-weight: 700;
+  background-color: #9bc9e2;
+  opacity: .3;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+  border-radius: 100%;
+  box-shadow: 10px 0 10px 0 rgba(15, 51, 85, 0.21);
+}
+
+.counter p {
+    position: absolute;
+    top: -60px;
+    width: 80px;
+    font-size: 25px;
+    color: #9acae3;
+}
+
+
+

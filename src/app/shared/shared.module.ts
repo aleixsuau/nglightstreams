@@ -1,0 +1,58 @@
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+import { FlexLayoutModule } from '@angular/flex-layout';
+
+import {
+  MatButtonModule,
+  MatInputModule,
+  MatCheckboxModule,
+  MatSnackBarModule,
+  MatSlideToggleModule,
+  MatTabsModule,
+  MatCardModule,
+  MatStepperModule,
+  MatIconModule,
+} from '@angular/material';
+import { CounterComponent } from './counter/counter.component';
+
+@NgModule({
+  imports: [
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    FlexLayoutModule,
+    // Material modules
+    MatButtonModule,
+    MatInputModule,
+    MatCheckboxModule,
+    MatSnackBarModule,
+    MatSlideToggleModule,
+    MatTabsModule,
+    MatCardModule,
+    MatStepperModule,
+    MatIconModule,
+  ],
+  declarations: [
+  CounterComponent],
+  exports: [
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    FlexLayoutModule,
+    // Material modules
+    MatButtonModule,
+    MatInputModule,
+    MatCheckboxModule,
+    MatSnackBarModule,
+    MatSlideToggleModule,
+    MatTabsModule,
+    MatCardModule,
+    MatStepperModule,
+    MatIconModule,
+    // Components
+    CounterComponent,
+  ]
+})
+export class SharedModule { }

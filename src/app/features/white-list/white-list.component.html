@@ -1,0 +1,147 @@
+<mat-card>
+  <form [formGroup]="form" novalidate>
+    <mat-vertical-stepper linear>
+      <mat-step label="BASIC INFORMATION"
+                formGroupName="subscriber"
+                [stepControl]="form.get('subscriber')">
+            <mat-form-field>
+                <input matInput
+                       formControlName="firstName"
+                       placeholder="First Name">
+                <mat-error *ngIf="form.get('subscriber').get('firstName').errors?.required">Please insert your Name</mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput
+                       formControlName="lastName"
+                       placeholder="Last Name">
+                <mat-error *ngIf="form.get('subscriber').get('lastName').errors?.required">Please insert your Last Name</mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput
+                       formControlName="email"
+                       placeholder="Email">
+                <mat-error *ngIf="form.get('subscriber').get('email').errors?.required">Please insert your Email</mat-error>
+                <mat-error *ngIf="form.get('subscriber').get('email').errors?.email">Please insert a valid Email</mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput
+                       formControlName="ethereum"
+                       placeholder="Ethereum Address">
+                <mat-error *ngIf="form.get('subscriber').get('ethereum').errors?.required">Please insert an Ethereum Address</mat-error>
+                <mat-error *ngIf="form.get('subscriber').get('ethereum').errors?.minLength || form.get('subscriber').get('ethereum').errors?.maxLength">Please insert a valid Ethereum Address</mat-error>
+            </mat-form-field>
+
+            <div class="clauses"
+                 formGroupName="clauses">
+
+              <button mat-raised-button
+                      type="button"
+                      (click)="checkAllClauses();">
+                      Accept All Clauses
+              </button>
+              <mat-checkbox formControlName="one">
+                I hereby undertake and confirm that I have read and understand the contents of <a href="https://github.com/lightstreams/lightstreams/blob/master/white-paper.md">the current version of the whitepaper</a>.
+              </mat-checkbox>
+              <mat-checkbox formControlName="two">
+                I hereby undertake and confirm that the details of my identity I have supplied are accurate.
+              </mat-checkbox>
+              <mat-checkbox formControlName="three">
+                I hereby undertake and confirm that I have read and accept the terms and conditions of the SHP token sale.
+              </mat-checkbox>
+              <mat-checkbox formControlName="four">
+                I hereby undertake and confirm that I have read and accept the Sharpe Capital privacy agreement.
+              </mat-checkbox>
+              <mat-checkbox formControlName="five">
+                I am not a national or resident of the United States of America, or I am an "accredited investor" as such term is defined in Section 501 of Regulation D under the United States Securities Act of 1933.
+              </mat-checkbox>
+              <mat-checkbox formControlName="six">
+                I am not a national or resident of the People's Republic of China, Singapore or Hong Kong.
+              </mat-checkbox>
+              <mat-checkbox formControlName="seven">
+                I understand that purchasing SHP tokens does not entitle me to any other tokens in the future.
+              </mat-checkbox>
+              <mat-checkbox formControlName="eight">
+                I hereby undertake and confirm that my primary domicile is not in one of the following UN embargoed countries; Afghanistan, Democratic Republic of the Congo, Eritrea, Guinea Bissau, Haiti, Iran, Iraq, Kenya, Liberia, Libya, North Korea, Rwanda, Sierra Leone, Somalia, Sudan or Syria.
+              </mat-checkbox>
+              <mat-error *ngIf="!allClausesChecked() && form.get('subscriber').get('clauses').touched;">Please accept all the clauses to proceed</mat-error>
+            </div>
+
+            <div class="stepper-buttons">
+              <button mat-raised-button
+                      matStepperNext
+                      type="button"
+                      [disabled]="form.controls.subscriber.invalid">
+                      Next
+              </button>
+            </div>
+      </mat-step>
+      <mat-step label="CONFIRM IDENTITY"
+                [stepControl]="form.get('confirmation_identity')">
+        <mat-form-field>
+          <input matInput
+                 formControlName="confirmation_identity"
+                 placeholder="Confirm Identity">
+          <mat-error *ngIf="form.controls.confirmation_identity.errors?.required">Please an Confirmation Number</mat-error>
+        </mat-form-field>
+        <div class="stepper-buttons">
+          <button mat-raised-button
+                  matStepperPrevious
+                  type="button">
+                  Back
+          </button>
+          <button mat-raised-button
+                  matStepperNext
+                  type="button">
+                  Next
+          </button>
+        </div>
+      </mat-step>
+      <mat-step label="CONTRIBUTION DETAILS"
+                [stepControl]="form.get('contribution_details')">
+          <mat-form-field>
+            <input matInput
+                   formControlName="contribution_details"
+                   placeholder="Contribution Details">
+            <mat-error *ngIf="form.controls.contribution_details.errors?.required">Please the Contribution Details</mat-error>
+          </mat-form-field>
+        <button mat-raised-button
+                (click)="saveSubscriber(form.value)">JOIN!</button>
+      </mat-step>
+    </mat-vertical-stepper>
+
+  </form>
+
+<!-- <mat-tab-group>
+  <mat-tab label="Tab 1">
+    <div fxLayout="column"
+    class="container">
+          <form [formGroup]="form" novalidate>
+              <mat-form-field>
+                  <input matInput
+                         formControlName="firstName"
+                         placeholder="First Name">
+              </mat-form-field>
+              <mat-form-field>
+                  <input matInput
+                         formControlName="lastName"
+                         placeholder="Last Name">
+              </mat-form-field>
+              <mat-form-field>
+                  <input matInput
+                         formControlName="email"
+                         placeholder="Email">
+              </mat-form-field>
+              <mat-form-field>
+                  <input matInput
+                         formControlName="ethereum"
+                         placeholder="Ethereum Address">
+              </mat-form-field>
+              <button mat-raised-button>Submit</button>
+          </form>
+        </div>
+    </mat-tab>
+    <mat-tab label="Tab 2">
+      Content 2
+    </mat-tab>
+  </mat-tab-group> -->
+</mat-card>
