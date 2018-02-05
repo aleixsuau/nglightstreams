@@ -5,12 +5,8 @@
 		<a href="#" id="top-bar-js" class="top-bar-link"><svg class="utouch-icon utouch-icon-arrow-top"><use xlink:href="#utouch-icon-arrow-top"></use></svg></a>
 			<div class="header-content-wrapper">
 
-			<div class="site-logo">
-				<a href="#" class="full-block"></a>
-				<img width="50" height="50" src="assets/utouch-theme/svg/flash.svg" alt="Lightstreams">
-				<div class="logo-text">
-					<div class="logo-title">Lightstreams</div>
-				</div>
+			<div class="logo">
+				<img src="assets/lightstreams-logo.png" alt="Lightstreams">
 			</div>
 
 			<nav id="primary-menu" class="primary-menu">
@@ -76,7 +72,7 @@
 						<h2 class="h1 heading-title">Distributed Content Publishing</h2>
 						<div class="main-slider-btn-wrap" data-swiper-parallax="-300">
 
-							<a target="_blank" href="https://github.com/lightstreams/lightstreams/blob/master/white-paper.md" class="btn btn--green btn--with-shadow">
+							<a target="_blank" href="https://github.com/lightstreams/lightstreams/blob/master/white-paper.md" class="btn btn--yellow btn--with-shadow">
 								White Paper
 							</a>
 
@@ -399,15 +395,15 @@
 
 	<!-- associated with -->
 
-	<section class="crumina-module crumina-module-slider pb80 bg-lighassets/utouch-theme/t">
+	<section class="crumina-module partners">
 		<div class="container">
 			<div class="row">
-				<div class="crumina-module crumina-heading">
-					<h2 class="heading-title"><span class="c-primary">Associated Partners</span></h2>
-				</div>
+        <div class="center-text">
+          <h2 class="heading-title c-white">Associated Partners</h2>
+        </div>
 				<div align="center">
 					<a href="https://www.thecoinlab.io/">
-					<img src="assets/utouch-theme/img/coinlab.png" align="center" alt="coinlab" />
+					  <img src="assets/utouch-theme/img/coinlab.png" align="center" alt="coinlab" />
 					</a>
 				</div>
 			</div>
@@ -418,25 +414,73 @@
 
 	<!-- featured on -->
 
-	<section class="crumina-module crumina-module-slider pb80 bg-lighassets/utouch-theme/t">
+	<section class="crumina-module featured-on bg-primary-color bg-5">
 		<div class="container">
 			<div class="row">
-				<div class="crumina-module crumina-heading">
-					<h2 class="heading-title"><span class="c-primary">Featured On</span></h2>
-				</div>
-				<div align="center">
-					<img src="assets/utouch-theme/img/featured.jpg" align="center" usemap="#Map" alt="featured on" />
-					<map name="Map" id="Map">
-						<area alt="HuffPost" title="HuffPost" href="https://www.huffingtonpost.com/entry/could-blockchain-technology-be-a-boon-for-the-music_us_5a10719ae4b0e30a9585076d" shape="poly" coords="24,93,15,19,294,24,302,87" />
-						<area alt="Week in Ethereum" title="Week in Ethereum" href="http://www.weekinethereum.com/post/166966935823/october-30-2017" shape="poly" coords="23,108,23,195,297,190,294,114" />
-						<area alt="HackerNoon" title="HackerNoon" href="https://hackernoon.com/artists-want-to-break-free-cd77e030f141" shape="poly" coords="316,111,316,195,714,191,713,120" />
-						<area alt="TechCrunch" title="TechCrunch" href="https://techcrunch.com/2017/10/25/announcing-the-startups-featured-in-startup-alley-pavilions-at-disrupt-berlin/" shape="poly" coords="314,14,318,89,708,93,705,12" />
-						<area alt="NY Bulletin" title="NY Bulletin" href="https://nybulletins.com/2017/12/23/lightstreams-peer-to-peer-publishing-network/" shape="poly" coords="726,117,729,189,933,189,931,112" />
-						<area alt="Loogic" title="Loogic" href="https://loogic.com/lightstreams/" shape="poly" coords="718,5,722,83,921,84,923,9" />
-					</map>
-				</div>
+        <div fxLayout
+             fxLayoutAlign="space-between stretch"
+             fxLayoutWrap>
+          <div fxFlex="1 1 100%"
+               class="center-text">
+            <h2 class="heading-title">Featured On</h2>
+          </div>
+          <div fxFlex="1 1 30%"
+               fxFlexAlign="center"
+               class="featured-on-item">
+            <a href="https://www.huffingtonpost.com/entry/could-blockchain-technology-be-a-boon-for-the-music_us_5a10719ae4b0e30a9585076d"
+               target="blank"
+               alt="Huffingtonpost">
+              <img src="assets/featured-on-item/huffington-logo.png">
+            </a>
+          </div>
+          <div fxFlex="1 1 30%"
+               fxFlexAlign="center"
+               class="featured-on-item">
+            <a href="https://techcrunch.com/2017/10/25/announcing-the-startups-featured-in-startup-alley-pavilions-at-disrupt-berlin/"
+               target="blank"
+               alt="Techcrunch">
+              <img src="assets/featured-on-item/techcrunch-logo.png">
+            </a>
+          </div>
+          <div fxFlex="1 1 30%"
+               fxFlexAlign="center"
+               class="featured-on-item">
+            <a href="http://www.weekinethereum.com/post/166966935823/october-30-2017"
+               target="blank"
+               alt="Ethereum">
+              <img src="assets/featured-on-item/ethereum-logo.png">
+            </a>
+          </div>
+          <div fxFlex="1 1 30%"
+               fxFlexAlign="center"
+               class="featured-on-item">
+            <a href="https://hackernoon.com/artists-want-to-break-free-cd77e030f141"
+               target="blank"
+               alt="Hackernoon">
+              <img src="assets/featured-on-item/hackernoon-logo.png">
+            </a>
+          </div>
+          <div fxFlex="1 1 30%"
+               fxFlexAlign="center"
+               class="featured-on-item">
+            <a href="https://loogic.com/lightstreams/"
+               target="blank"
+               alt="Loogic">
+              <img src="assets/featured-on-item/loogic-logo.png">
+            </a>
+          </div>
+          <div fxFlex="1 1 30%"
+               fxFlexAlign="center"
+               class="featured-on-item">
+            <a href="https://nybulletins.com/2017/12/23/lightstreams-peer-to-peer-publishing-network/"
+               target="blank"
+               alt="NYbulletins">
+              <img src="assets/featured-on-item/NYB-logo.png">
+            </a>
+          </div>
+        </div>
 			</div>
-		</div>
+    </div>
 	</section>
 
 	<!-- end featured on -->
