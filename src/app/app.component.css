@@ -11,7 +11,7 @@
 }
 
 .join {
-    margin-bottom: 60px;
+  margin-bottom: 60px;
 }
 
 .featured-on-item {
@@ -46,5 +46,43 @@
 
 .crumina-module.featured-on h2 {
   color: white;
+}
+
+.teammembers-thumb img {
+  filter: grayscale(100%);
+  height: 100px;
+  width: 100px;
+}
+
+.swiper-slide:hover img {
+  filter: none;
+}
+
+.telegram {
+  position: fixed;
+  z-index: 9;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 20px 10px 20px;
+  background-color: #0083ffcf;
+  border-radius: 50px;
+  border: 3px solid #3377b0;
+  box-shadow: 10px 0 30px 0 rgba(0, 131, 255, 0.4);
+  transition: 200ms ease-in;
+}
+
+.telegram:hover {
+  background-color: #0083ffeb;
+  box-shadow: 10px 0 80px 10px rgba(0, 131, 255, 0.4);
+  transform: scale(1.1);
+ }
+
+.telegram h4 {
+  margin: 0px;
+  color: white;
+}
+
+.telegram i {
+  filter: brightness(0) invert(1);
 }
 

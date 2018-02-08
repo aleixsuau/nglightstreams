@@ -10,10 +10,12 @@
   opacity: 1 !important;
   display: inline-block;
   position: relative;
-  margin-right: 70px;
-  width: 80px;
-  height: 80px;
-  line-height: 80px;
+  margin-right: 0px;
+  width: 100px;
+  max-width: 100px;
+  height: 100px;
+  max-height: 100px;
+  line-height: 100px;
   color: #fff;
   text-align: center;
   font-size: 50px;
@@ -28,7 +30,7 @@
 
 .counter p {
     position: absolute;
-    top: -60px;
+    top: -80px;
     width: 80px;
     font-size: 25px;
     color: #9acae3;

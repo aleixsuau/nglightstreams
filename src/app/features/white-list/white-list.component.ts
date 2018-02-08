@@ -57,7 +57,7 @@ export class WhiteListComponent implements OnInit {
                     setTimeout(() => {
                       this.stepper.next();
                       this.showSpinner = false;
-                    }, 500);
+                    }, 900);
                   }
                 });
 
@@ -72,7 +72,7 @@ export class WhiteListComponent implements OnInit {
                       setTimeout(() => {
                         this.contributionInput.nativeElement.focus();
                       }, 100);
-                    }, 500);
+                    }, 700);
                   }
                 });
   }
