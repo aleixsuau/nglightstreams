@@ -29,12 +29,25 @@
 }
 
 .counter p {
-    position: absolute;
-    top: -80px;
-    width: 80px;
-    font-size: 25px;
-    color: #9acae3;
+  position: absolute;
+  top: -80px;
+  width: 80px;
+  font-size: 25px;
+  color: #9acae3;
 }
 
+@media (max-width: 800px) {
+  .slides-item {
+    max-width: 70px;
+    max-height: 70px;
+    line-height: 70px;
+    font-size: 32px !important;
+  }
+
+  .counter p {
+    top: -60px;
+    font-size: 17px !important;
+  }
+}
 
 
