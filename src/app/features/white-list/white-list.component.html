@@ -1,6 +1,7 @@
 <mat-card class="bounce">
   <mat-spinner diameter="40"
-               *ngIf="showSpinner"></mat-spinner>
+               *ngIf="showSpinner">
+  </mat-spinner>
   <form [formGroup]="form" novalidate>
     <mat-vertical-stepper linear>
       <mat-step label="BASIC INFORMATION"
